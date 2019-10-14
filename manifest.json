@@ -1,0 +1,28 @@
+{
+	"name": "Canvas File Opener",
+	"version": "1.0",
+	"description": "Opens Canvas files in a new tab",
+	"permissions": ["activeTab", "*://*.canvas.iastate.edu/*"],
+	"content_scripts": 
+	[
+		{
+			"matches": ["*://*.canvas.iastate.edu/courses/*"],
+			"css": [
+				"css/styles.css"
+			],
+			"js": [
+				"node_modules/jquery/dist/jquery.min.js",
+				"node_modules/bootstrap/dist/js/bootstrap.min.js",
+				"js/INST.js",
+				"js/htmlEscape.js",
+				"js/ajaxJSON.js",
+				"js/doc_preview.js",
+				"js/loadingImg.js",
+				"js/content_script.js"
+			],
+			"run_at": "document_end"
+		}
+	],
+	"content_security_policy": "script-src 'self' https://ajax.googleapis.com; object-src 'self'",
+	"manifest_version": 2
+}
